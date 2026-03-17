@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        background-image: url(https://i.pinimg.com/1200x/9f/6b/3d/9f6b3d7a2ab9b2b18e4f721877057715.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      #wrapper {
+        width: 40%;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 60px;
+
+        gap: 20px;
+        background-color: rgba(240, 248, 255, 0.482);
+      }
+      input {
+        width: 65%;
+        height: 8vh;
+        background-color: rgb(27, 27, 27);
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        color: whitesmoke;
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 10px;
+      }
+
+      label {
+        font-size: 15px;
+        color: white;
+        font-weight: 700;
+      }
+      button {
+        width: 30%;
+        height: 6vh;
+        border-radius: 30px;
+        align-self: center;
+        border: none;
+        color: white;
+        background-color: rgb(27, 27, 27);
+        font-family: Arial, sans-serif;
+        /* font-size: 15px; */
+        font-weight: 600;
+      }
+      #output {
+        width: 100%;
+        height: 19vh;
+        background-color: rgb(89, 89, 89);
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      #reset {
+        width: 40px;
+        height: 30px;
+        margin-left: 25px;
+        border-radius: 20px;
+        align-self: center;
+        background-image: url(image-removebg-preview\ \(5\).png);
+        background-position: center;
+        background-size: contain;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="wrapper">
+        <div>
+          <label for=""> Plese Enter Your Name:</label>
+          <input type="text" id="myName" />
+        </div>
+        <div>
+          <label for=""> Plese Input Your Score:</label>
+          <input type="text" id="myScore" />
+        </div>
+        <button onclick="checkGrade()">Enter</button>
+        <div id="output"></div>
+        <button id="reset" onclick="resett()"></button>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  function checkGrade(params) {
+    let myName = document.getElementById("myName");
+    let myScore = document.getElementById("myScore");
+    let output = document.getElementById("output");
+
+    if (myScore.value >= 80 && myScore.value <= 100) {
+      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is A, Great Job!👍`;
+    } else if (myScore.value >= 70 && myScore.value <= 79) {
+      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is B, Amazing!👍`;
+    } else if (myName.value.trim() === null) {
+      output.innerHTML = `Please input your Name to know your Overall Grade.`;
+    } else if (myScore.value >= 60 && myScore.value <= 69) {
+      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is C. Nice`;
+    } else if (myScore.value >= 50 && myScore.value <= 59) {
+      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is D, do better next time`;
+    } else if (isNaN(myScore.value)) {
+      output.innerHTML = `Plese enter a valid score`;
+    } else if (myScore.value > 100) {
+      output.innerHTML = `${myScore.value} is out of Grading Range, score should be between 0 - 100.`;
+    } else {
+      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is F, omoo do better abeg`;
+    }
+  }
+
+  function resett(params) {
+    let reset = document.getElementById("reset");
+
+    myName.value = null;
+    myScore.value = null;
+    output.innerHTML = null;
+  }
+</script>
