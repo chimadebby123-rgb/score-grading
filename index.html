@@ -40,7 +40,7 @@
         border-radius: 20px;
         border: none;
         outline: none;
-        color: whitesmoke;
+        color: white;
         font-size: 20px;
         font-weight: 500;
         padding-left: 10px;
@@ -115,21 +115,21 @@
     let output = document.getElementById("output");
 
     if (myScore.value >= 80 && myScore.value <= 100) {
-      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is A, Great Job!👍`;
+      output.innerHTML = `Hello ${myName.value}, Your Score Is ${myScore.value}, And Your Overall Grade Is A, Great Job!👍`;
     } else if (myScore.value >= 70 && myScore.value <= 79) {
-      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is B, Amazing!👍`;
+      output.innerHTML = `Hello ${myName.value}, Your Score Is ${myScore.value}, And Your Overall Grade Is B, Amazing!👍`;
     } else if (myName.value.trim() === null) {
       output.innerHTML = `Please input your Name to know your Overall Grade.`;
     } else if (myScore.value >= 60 && myScore.value <= 69) {
-      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is C. Nice`;
+      output.innerHTML = `Hello ${myName.value}, Your Score Is ${myScore.value}, And Your Overall Grade Is C. Nice.`;
     } else if (myScore.value >= 50 && myScore.value <= 59) {
-      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is D, do better next time`;
+      output.innerHTML = `Hello ${myName.value}, Your Score Is ${myScore.value}, And Your Overall Grade Is D, Do Better Next Time`;
     } else if (isNaN(myScore.value)) {
-      output.innerHTML = `Plese enter a valid score`;
+      output.innerHTML = `Plese Enter A Valid Score`;
     } else if (myScore.value > 100) {
-      output.innerHTML = `${myScore.value} is out of Grading Range, score should be between 0 - 100.`;
+      output.innerHTML = `${myScore.value} Is Out Of Grading Range, Score Should Be Between 0 - 100.`;
     } else {
-      output.innerHTML = `Hello ${myName.value}, your Score is ${myScore.value}, and your overall grade is F, omoo do better abeg`;
+      output.innerHTML = `Hello ${myName.value}, Your Score Is ${myScore.value}, And Your Overall Grade Is F, omoo do better abeg`;
     }
   }
 
